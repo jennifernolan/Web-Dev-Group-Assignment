@@ -84,13 +84,8 @@ $(document).ready(function() {
 			error++;
 		}
 		
-		var d = new Date();
-		var y = d.getFullYear();
-		var m = d.getMonth();
-		var day = d.getDate();
-		var todaysdate = day + "-" + m + "-" + y;
 		var date = $('#datepicker').val();
-		if(date > todaysdate)
+		if(date > Date.now())
 		{
 			alert('Date of birth cannot be a future date');
 			error++;
