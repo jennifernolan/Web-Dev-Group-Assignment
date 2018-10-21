@@ -48,9 +48,16 @@ $(document).ready(function() {
 		}
 			
 		var zipcode = $('#zip_text').val();
-		if(!zipcode.match(/^[a-zA-Z]+\s+[0-9]+$/))
+		if(!zipcode.match(/^[a-zA-Z]+[0-9]+[0-9]+\s+[a-zA-Z]+[a-zA-Z]+[0-9]+$/))
 		{
 			alert('Zip code must be at least 1 letter, a space and at least 1 number');
+			error++;
+		}
+		
+		var passwrd = $('#password_text').val();
+		if(!passwrd.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/))
+		{
+			alert("Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters");
 			error++;
 		}
 				
@@ -88,6 +95,14 @@ $(document).ready(function() {
 		if(date > Date.now())
 		{
 			alert('Date of birth cannot be a future date');
+			error++;
+		}
+		
+		
+		var passwrd = $('#password_text').val();
+		if(!passwrd.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/))
+		{
+			alert("Invalid password");
 			error++;
 		}
 		
