@@ -23,8 +23,8 @@
 				<ul>
 					<li><a href="HomePage.html">Home</a></li>
 					<li><a href="SearchPage.html">Search</a></li>
-					<li><a href="LoginPage.html">Log in</a></li>
-					<li><a href="SignupPage.html">Become a member</a></li>
+					<li><a href="LoginPage.php">Log in</a></li>
+					<li><a href="SignupPage.php">Become a member</a></li>
 					<!--<li><a href="ProfilePage.html">Your profile</a></li>-->
 				</ul>
 			</nav>
@@ -57,7 +57,7 @@
 									Date of Birth (DD/MM/YYYY):
 								</td>
 								<td class="data">
-									<input type="text" id="datepicker">
+									<input type="text" name="date_picker" id="datepicker">
 								</td>
 							</tr>
 							<tr>
@@ -114,13 +114,14 @@
 							</tr>
 							<tr>
 								<td class="name">
-									<input type="button" value="Submit" id="submit"> 
+									<input type="button" name="submit" value="Submit" id="submit"> 
 								</td>
 								<td class="data">
 									<input type="reset" value="Clear">
 								</td>
 							</tr>
 						</tbody></table>
+						<?php require 'DbConnection/connection.php';?>
 					</form>
 				</section>
 			</div>
