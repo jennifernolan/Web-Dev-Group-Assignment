@@ -65,7 +65,7 @@ $(document).ready(function() {
 		var address2 = $('#addr2_text').val();
 		if(error == 0 && address1 != 0 && address2 != 0)
 		{
-			window.location("ProfilePage.html");
+			//window.location("ProfilePage.html");
 		}
 		else
 		{
@@ -108,7 +108,7 @@ $(document).ready(function() {
 		
 		if(error == 0)
 		{
-			window.location("ProfilePage.html");
+			//window.location("ProfilePage.html");
 		}
 		else
 		{

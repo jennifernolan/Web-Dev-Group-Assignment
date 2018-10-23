@@ -34,7 +34,8 @@
 					<h1>Personal Information</h1>
 					<p>Please fill out the below form to register at the library:</p>
 					<br>
-					<form name="personal_info" id="personal_info">
+					<?php require 'DbConnection/connection.php';?>
+					<form action="Scripts/index.php" method="post" name="personal_info" id="personal_info">
 						<table align="center" border="0"><tbody>
 							<tr>
 								<td class="name">
@@ -114,14 +115,13 @@
 							</tr>
 							<tr>
 								<td class="name">
-									<input type="button" name="submit" value="Submit" id="submit"> 
+									<input type="submit" name="submit" value="Submit" id="submit"> 
 								</td>
 								<td class="data">
 									<input type="reset" value="Clear">
 								</td>
 							</tr>
 						</tbody></table>
-						<?php require 'DbConnection/connection.php';?>
 					</form>
 				</section>
 			</div>
