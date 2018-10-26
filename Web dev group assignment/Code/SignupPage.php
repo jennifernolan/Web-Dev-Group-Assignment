@@ -110,7 +110,7 @@
 									Password:
 								</td>
 								<td class="data">
-									<input type="text" name="password_text" id="password_text" width="6" size="6" maxlength="20" required>
+									<input type="password" name="password_text" id="password_text" width="6" size="6" maxlength="20" required>
 								</td>
 							</tr>
 							<tr>
