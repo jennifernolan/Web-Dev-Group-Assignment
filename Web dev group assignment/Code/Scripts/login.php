@@ -1,6 +1,5 @@
 <?php
 	/*need to include a PASSWORD */
-	/*works but can login even if not in database*/
 	require '../DbConnection/connection.php';
 	
 	$firstname = $_POST['firstname_text'];
@@ -11,25 +10,40 @@
 	{
 		try
 		{
-			$stmt = $conn->prepare("Select * FROM Users WHERE FirstName='$firstname' and LastName='$lastname' and Email='$email'");
-		
-			if($stmt->execute())
+			$query1 = "Select FirstName FROM Users";
+			$query2 = "Select LastName FROM Users";
+			$query3 = "Select Email FROM Users";
+			$statement1 = $conn->query($query1);
+			$statement2 = $conn->query($query2);
+			$statement3 = $conn->query($query3);
+			$resultsArray1 = $statement1->fetchAll(PDO::FETCH_COLUMN);
+			$resultsArray2 = $statement2->fetchAll(PDO::FETCH_COLUMN);
+			$resultsArray3 = $statement3->fetchAll(PDO::FETCH_COLUMN);
+			
+			$query = "SELECT * FROM Users";
+			$statement = $conn->prepare($query);
+			$statement->execute();
+			$total = $statement->rowCount();
+			
+			$successful = 0;
+			
+			for($count = 0; $count <= $total; $count++)
 			{
-				echo "Login Successful";
-				//header('location:../ProfilePage.php');
+				if($resultsArray1[$count] == $firstname && $resultsArray2[$count] == $lastname && $resultsArray3[$count] == $email)
+				{
+					$successful = 1;
+					header('location:../ProfilePage.php');
+				}
 			}
-			else
+			
+			if($successful == 0)
 			{
-				echo "login unsuccessful";
+				header('location:../LoginPage.php');
 			}
 		}
 		catch(PDOException $e)
 		{
 			echo "ERROR: " .$e->getMessage();
 		}
-	}
-	else
-	{
-		echo "unsuccessful";
 	}
 ?>
