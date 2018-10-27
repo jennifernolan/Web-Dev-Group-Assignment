@@ -35,14 +35,22 @@
 					<p>Please fill out the below form to register at the library:</p>
 					<br>
 					<?php require 'DbConnection/connection.php';?>
-					<form action="Scripts/index.php" method="post" name="personal_info" id="personal_info">
+					<form action="Scripts/signup.php" method="post" name="personal_info" id="personal_info">
 						<table align="center" border="0"><tbody>
 							<tr>
 								<td class="name">
-									Name:
+									First Name:
 								</td>
 								<td class="data">
-									<input type="text" name="name_text" id="name_text" width="20" maxlength="40" size="20" required>
+									<input type="text" name="firstname_text" id="firstname_text" width="20" maxlength="40" size="20" required>
+								</td>
+							</tr>
+							<tr>
+								<td class="name">
+									Last Name:
+								</td>
+								<td class="data">
+									<input type="text" name="lastname_text" id="lastname_text" width="20" maxlength="40" size="20" required>
 								</td>
 							</tr>
 							<tr>

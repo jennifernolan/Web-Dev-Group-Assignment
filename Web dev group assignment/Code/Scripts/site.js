@@ -11,10 +11,18 @@ $(function() {
 $(document).ready(function() {
 	$('#submit').click(function(e) {
 		var error = 0;
-		var name = $('#name_text').val();
-		if(!name.match(/^[a-zA-Z]+$/))
+		var firstname = $('#firstname_text').val();
+		if(!firstname.match(/^[a-zA-Z]+$/))
 		{
-			alert('Name may only contain letters');
+			alert('First name may only contain letters');
+			error++;
+		}
+			
+		var error = 0;
+		var lastname = $('#lastname_text').val();
+		if(!lastname.match(/^[a-zA-Z]+$/))
+		{
+			alert('Last name may only contain letters');
 			error++;
 		}
 			
@@ -77,10 +85,18 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$('#login').click(function(e) {
 		var error = 0;
-		var name = $('#name_text').val();
-		if(!name.match(/^[a-zA-Z]+$/))
+		var firstname = $('#firstname_text').val();
+		if(!firstname.match(/^[a-zA-Z]+$/))
 		{
-			alert('Name may only contain letters');
+			alert('First name may only contain letters');
+			error++;
+		}
+			
+		var error = 0;
+		var lastname = $('#lastname_text').val();
+		if(!lastname.match(/^[a-zA-Z]+$/))
+		{
+			alert('Last name may only contain letters');
 			error++;
 		}
 			
@@ -90,14 +106,6 @@ $(document).ready(function() {
 			alert('Email is not valid');
 			error++;
 		}
-		
-		var date = $('#datepicker').val();
-		if(date > Date.now())
-		{
-			alert('Date of birth cannot be a future date');
-			error++;
-		}
-		
 		
 		var passwrd = $('#password_text').val();
 		if(!passwrd.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/))

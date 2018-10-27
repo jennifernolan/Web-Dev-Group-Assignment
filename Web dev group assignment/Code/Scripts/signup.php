@@ -3,9 +3,10 @@
 	
 	if(isset($_POST['submit']))
 	{
-		$stmt = $conn->prepare("INSERT INTO Users(Name, Email, DOB, Gender, Address1, Address2, City, ZipCode, Password) values (:name,:email,:dob,:gender,:address1,:address2,:city,:zipcode,:password)");
+		$stmt = $conn->prepare("INSERT INTO Users(FirstName, LastName, Email, DOB, Gender, Address1, Address2, City, ZipCode, Password) values (:firstname, :lastname, :email,:dob,:gender,:address1,:address2,:city,:zipcode,:password)");
 	
-		$stmt->bindParam(':name',$_POST['name_text']);
+		$stmt->bindParam(':firstname',$_POST['firstname_text']);
+		$stmt->bindParam(':lastname',$_POST['lastname_text']);
 		$stmt->bindParam(':email',$_POST['email_text']);
 		$stmt->bindParam(':dob',$_POST['date_picker']);
 		$stmt->bindParam(':gender',$_POST['select_gender']);
@@ -13,7 +14,7 @@
 		$stmt->bindParam(':address2',$_POST['addr2_text']);
 		$stmt->bindParam(':city',$_POST['city_text']);
 		$stmt->bindParam(':zipcode',$_POST['zip_text']);
-		$stmt->bindParam(':password',$_POST['password_text']);
+		$stmt->bindParam(':password',password_hash($_POST['password_text'], PASSWORD_DEFAULT));
 		
 		if($stmt->execute())
 		{

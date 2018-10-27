@@ -35,14 +35,23 @@
 				<section class="contentSection">
 					<h1>PLEASE LOGIN</h1>
 					<br>
+					<?php require 'DbConnection/connection.php';?>
 					<form name="personal_info" id="personal_info">
 						<table align="center" border="0"><tbody>
 							<tr>
 								<td class="name">
-									Name:
+									First Name:
 								</td>
 								<td class="data">
-									<input type="text" name="name_text" id="name_text" width="20" maxlength="40" size="20" required>
+									<input type="text" name="firstname_text" id="firstname_text" width="20" maxlength="40" size="20" required>
+								</td>
+							</tr>
+							<tr>
+								<td class="name">
+									Last Name:
+								</td>
+								<td class="data">
+									<input type="text" name="lastname_text" id="lastname_text" width="20" maxlength="40" size="20" required>
 								</td>
 							</tr>
 							<tr>
@@ -55,18 +64,10 @@
 							</tr>
 							<tr>
 								<td class="name">
-									Date of Birth (DD/MM/YYYY):
-								</td>
-								<td class="data">
-									<input type="text" id="datepicker">
-								</td>
-							</tr>
-							<tr>
-								<td class="name">
 									Password:
 								</td>
 								<td class="data">
-									<input type="text" name="password_text" id="password_text" width="6" size="6" maxlength="20" required>
+									<input type="password" name="password_text" id="password_text" width="6" size="6" maxlength="20" required>
 								</td>
 							</tr>
 							<tr>
@@ -75,8 +76,6 @@
 								</td>
 							</tr>
 						</tbody></table>
-						
-						<?php require 'DbConnection/connection.php';?>
 					</form>
 				</section>
 			</div>
