@@ -36,7 +36,7 @@
 					<h1>PLEASE LOGIN</h1>
 					<br>
 					<?php require 'DbConnection/connection.php';?>
-					<form name="personal_info" id="personal_info">
+					<form action="Scripts/login.php" method="post" name="personal_info" id="personal_info">
 						<table align="center" border="0"><tbody>
 							<tr>
 								<td class="name">
@@ -62,17 +62,17 @@
 									<input type="email" name="email_text" id="email_text" width="20" maxlength="40" size="20" required>
 								</td>
 							</tr>
-							<tr>
+							<!--<tr>
 								<td class="name">
 									Password:
 								</td>
 								<td class="data">
 									<input type="password" name="password_text" id="password_text" width="6" size="6" maxlength="20" required>
 								</td>
-							</tr>
+							</tr>-->
 							<tr>
 								<td class="name">
-									<input type="button" value="Submit" id="login"> 
+									<input type="submit" value="Login" id="login" name="login"> 
 								</td>
 							</tr>
 						</tbody></table>
