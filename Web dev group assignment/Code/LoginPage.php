@@ -62,14 +62,14 @@
 									<input type="email" name="email_text" id="email_text" width="20" maxlength="40" size="20" required>
 								</td>
 							</tr>
-							<!--<tr>
+							<tr>
 								<td class="name">
 									Password:
 								</td>
 								<td class="data">
 									<input type="password" name="password_text" id="password_text" width="6" size="6" maxlength="20" required>
 								</td>
-							</tr>-->
+							</tr>
 							<tr>
 								<td class="name">
 									<input type="submit" value="Login" id="login" name="login"> 

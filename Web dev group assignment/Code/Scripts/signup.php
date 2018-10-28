@@ -18,7 +18,7 @@
 		
 		if($stmt->execute())
 		{
-			echo "New records created successfully";
+			//echo "New records created successfully";
 			header('location:../ProfilePage.php');
 		}
 	}
