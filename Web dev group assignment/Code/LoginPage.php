@@ -1,5 +1,6 @@
-<!-- Page for user with an account to enter their name,email and date of birth-->
-<!-- NEED TO INPUT CODE TO MAKE SURE THEY ARE ALREAY SIGNED UP (PHP CAN'T DO YET)-->
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -27,7 +28,7 @@
 					<li><a href="SearchPage.html">Search</a></li>
 					<li><a href="LoginPage.php">Log in</a></li>
 					<li><a href="SignupPage.php">Become a member</a></li>
-					<!--<li><a href="ProfilePage.html">Your profile</a></li>-->
+					<li><a href="ProfilePage.php">Your profile</a></li>
 				</ul>
 			</nav>
 			

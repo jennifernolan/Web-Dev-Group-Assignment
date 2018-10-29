@@ -6,6 +6,12 @@
 	$email = $_POST['email_text'];
 	$password = $_POST['password_text'];
 	
+	session_start();
+	$_SESSION["firstname"] = $firstname;
+	$_SESSION["lastname"] = $lastname;
+	$_SESSION["emailname"] = $email;
+	$_SESSION["password"] = $password;
+	
 	if(isset($_POST['login']))
 	{
 		try

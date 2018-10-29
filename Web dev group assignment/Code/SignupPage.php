@@ -1,4 +1,3 @@
-<!--Form to sign up with if the user does not have a account-->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -25,7 +24,7 @@
 					<li><a href="SearchPage.html">Search</a></li>
 					<li><a href="LoginPage.php">Log in</a></li>
 					<li><a href="SignupPage.php">Become a member</a></li>
-					<!--<li><a href="ProfilePage.html">Your profile</a></li>-->
+					<li><a href="ProfilePage.php">Your profile</a></li>
 				</ul>
 			</nav>
 			
