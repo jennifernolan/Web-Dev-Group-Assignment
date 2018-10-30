@@ -23,6 +23,7 @@
 		else
 		{
 			echo "File is not an image.";
+			header('location:ProfilePage.php');
 			$uploadOk = 0;
 		}
 	}
@@ -31,20 +32,24 @@
 	if(file_exists($target_file))
 	{
 		echo "Sorry, file already exists";
+		$_SESSION["uploadedimage"] = $target_file;
+		header('location:ProfilePage.php');
 		$uploadOk = 0;
 	}
 	
 	//check file size
 	if($_FILES["fileToUpload"]["size"] > 500000)
 	{
-		echo "Sorry, your file is too large";
+		echo "Sorry, your file is too large";		
+		header('location:ProfilePage.php');
 		$uploadOk = 0;
 	}
 	
 	//Allow certain file formats
 	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif")
 	{
-		echo "Sorry, only JPG, JPEG, PNG and GIF files are allowed.";
+		echo "Sorry, only JPG, JPEG, PNG and GIF files are allowed.";	
+		header('location:ProfilePage.php');
 		$uploadOk = 0;
 	}
 	
@@ -52,6 +57,7 @@
 	if($uploadOk == 0)
 	{
 		echo "Sorry, your file was not uploaded";
+		header('location:ProfilePage.php');
 		//if everything is ok, try to upload file
 	}
 	else
@@ -66,6 +72,8 @@
 		else
 		{
 			echo "Sorry, there was an error uploading your file";
+			$_SESSION["uploadedimage"] = $target_file;
+			header('location:ProfilePage.php');
 		}
 	}
 ?>

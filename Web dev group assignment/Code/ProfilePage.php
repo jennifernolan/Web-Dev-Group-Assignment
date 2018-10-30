@@ -1,8 +1,6 @@
 <!--Once user has logged in they go to this page. Add a "My Books" area where the user can add books to a wishlist to read.-->
-<!-- USER NEEDS TO LOGIN FIRST BEFORE BEING ABLE TO USE THIS PAGE-->
 <?php
 	session_start();
-	//session_unset();
 	if($_SESSION["firstname"] == null && $_SESSION["lastname"] == null &&
 	$_SESSION["emailname"] == null && $_SESSION["password"] == null)
 	{
@@ -12,7 +10,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
 		<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css">
+		
 		<title>The Library</title>
 	</head>
 	
@@ -36,7 +38,14 @@
 			<div id="content">
 				<section class="contentSection">
 					<h1>WELCOME TO YOUR PROFILE</h1>
+					
+					<form action="Scripts/signout.php">
+						<input type="submit" value="Sign Out">
+					</form>
+					
 					<br>
+					<br>
+					
 					<?php require 'DbConnection/connection.php';?>
 					<form action="upload.php" method="post" enctype="multipart/form-data">
 						Select an image to upload:
@@ -47,10 +56,11 @@
 						<br>
 						<input type="submit" value="Upload Image" name="submit">
 					</form>
+					
+					<br>
 					<img alt="Uploaded Image" src="<?php echo $_SESSION['uploadedimage']?>" height=200 width=300/>
 				</section>
 			</div>
-			
 			<footer>
 				Site by: Jennifer Nolan &copy; 2018
 			</footer>

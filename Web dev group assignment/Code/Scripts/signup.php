@@ -1,6 +1,12 @@
 <?php
 	require '../DbConnection/connection.php';
 	
+	session_start();
+	$_SESSION["firstname"] = $_POST['firstname_text'];
+	$_SESSION["lastname"] = $_POST['lastname_text'];
+	$_SESSION["emailname"] = $_POST['email_text'];
+	$_SESSION["password"] = $_POST['password_text'];
+	
 	if(isset($_POST['submit']))
 	{
 		$stmt = $conn->prepare("INSERT INTO Users(FirstName, LastName, Email, DOB, Gender, Address1, Address2, City, ZipCode, Password) values (:firstname, :lastname, :email,:dob,:gender,:address1,:address2,:city,:zipcode,:password)");
