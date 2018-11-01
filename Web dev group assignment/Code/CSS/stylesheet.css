@@ -106,3 +106,9 @@ footer{
 	width: 25%;
 	padding: 10px;
 }
+
+#carosel {
+	display: block; 
+	margin-left: auto;
+	margin-right:auto;
+}
