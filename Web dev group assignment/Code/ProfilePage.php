@@ -39,11 +39,8 @@
 				<section class="contentSection">
 					<h1>WELCOME TO YOUR PROFILE</h1>
 					
-					<form action="Scripts/signout.php">
-						<input type="submit" value="Sign Out">
-					</form>
-					
 					<br>
+					<img id="uploadedImage" alt="Uploaded Image" src="<?php echo $_SESSION['uploadedimage']?>">
 					<br>
 					
 					<?php require 'DbConnection/connection.php';?>
@@ -58,7 +55,15 @@
 					</form>
 					
 					<br>
-					<img alt="Uploaded Image" src="<?php echo $_SESSION['uploadedimage']?>" height=200 width=300/>
+					<h2>My Books</h2>
+					<br>
+					
+					<form action="Scripts/signout.php">
+						<input type="submit" value="Sign Out">
+					</form>
+					
+					<br>
+					
 				</section>
 			</div>
 			<footer>

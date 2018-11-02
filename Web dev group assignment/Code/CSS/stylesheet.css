@@ -112,3 +112,11 @@ footer{
 	margin-left: auto;
 	margin-right:auto;
 }
+
+#uploadedImage {
+	float: right;
+	height: 200px;
+	width: 300px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
