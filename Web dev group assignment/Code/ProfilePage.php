@@ -64,6 +64,18 @@
 					
 					<br>
 					
+					<form action="ResetPassword.php">
+						<input type="submit" value="Reset your password">
+					</form>
+					
+					<br>
+					
+					<form action="Scripts/deleteProfile.php">
+						<input type="submit" value="Delete your profile">
+					</form>
+					
+					<br>
+					
 				</section>
 			</div>
 			<footer>
