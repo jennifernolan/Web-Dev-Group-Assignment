@@ -39,11 +39,31 @@
 				<section class="contentSection">
 					<h1>WELCOME TO YOUR PROFILE</h1>
 					
+					<?php 
+						require 'DbConnection/connection.php';
+						$query = "SELECT UploadedImage FROM Users";
+						$statement = $conn->query($query);
+						$result = $statement->fetchAll(PDO::FETCH_COLUMN);
+						
+						$query2 = "SELECT Email FROM Users";
+						$statement2 = $conn->query($query2);
+						$result2 = $statement2->fetchAll(PDO::FETCH_COLUMN);
+						
+						$total = $statement->rowCount();
+						
+						for($count = 0; $count < $total; $count++)
+						{
+							if($result2[$count] == $_SESSION["emailname"])
+							{
+								$upload = $result[$count];
+							}
+						}
+					?>
+					
 					<br>
-					<img id="uploadedImage" alt="Uploaded Image" src="<?php echo $_SESSION['uploadedimage']?>">
+					<img id="uploadedImage" alt="Uploaded Image" src="<?php echo $upload;?>">
 					<br>
 					
-					<?php require 'DbConnection/connection.php';?>
 					<form action="upload.php" method="post" enctype="multipart/form-data">
 						Select an image to upload:
 						<br>
