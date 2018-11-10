@@ -1,3 +1,4 @@
+//datepicker format
 $(function() {
 	$('#datepicker').datepicker({
 		maxDate: new Date(),
@@ -8,6 +9,7 @@ $(function() {
 	});
 });
 	
+//form validation for the signup page form
 $(document).ready(function() {
 	$('#submit').click(function(e) {
 		var error = 0;
@@ -82,6 +84,7 @@ $(document).ready(function() {
 	});
 });
 
+//form validation for the login page form
 $(document).ready(function() {
 	$('#login').click(function(e) {
 		var error = 0;

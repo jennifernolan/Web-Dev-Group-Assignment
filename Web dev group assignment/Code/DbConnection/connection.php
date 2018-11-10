@@ -1,9 +1,11 @@
 <?php
+	//code to connect to the database through the localhost 127.0.0.1
 	$servername = "127.0.0.1";
 	$username = "root";
 	$password = "";
 	$dbname = "mydb";
-		
+	
+	//try to connect to the database
 	try
 	{
 		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

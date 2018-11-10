@@ -6,6 +6,7 @@
 	session_start();
 	$email = $_SESSION["emailname"];
 	
+	//update the specific users password details, found by using the users unique email, in the database
 	$stmt = $conn->prepare("UPDATE Users SET Password = '$password' WHERE Email = '$email'");
 	$stmt->execute();
 

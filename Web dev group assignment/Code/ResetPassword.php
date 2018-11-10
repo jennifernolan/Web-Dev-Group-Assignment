@@ -1,3 +1,4 @@
+<!-- Page that allows the user to reset their password -->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,6 +31,7 @@
 					<h1>RESET YOUR PASSWORD</h1>
 					<br>
 					
+					<!-- form for the user to submit their new password and update their details in the database -->
 					<form action="Scripts/resetPassword.php" method="post" name="personal_info" id="personal_info">
 						<table align="center" border="0"><tbody>
 							<tr>

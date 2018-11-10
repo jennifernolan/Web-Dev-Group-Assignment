@@ -36,7 +36,9 @@
 					<h1>Personal Information</h1>
 					<p>Please fill out the below form to register at the library:</p>
 					<br>
+					<!-- connect to the database -->
 					<?php require 'DbConnection/connection.php';?>
+					<!-- When the user enters their details into the form go to signup.php and add their details to the system. Javascript used to validate user details -->
 					<form action="Scripts/signup.php" method="post" name="personal_info" id="personal_info">
 						<table align="center" border="0"><tbody>
 							<tr>

@@ -62,6 +62,7 @@
 	}
 	else
 	{
+		//update the database with the file path of the picture and update the profile page
 		if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file))
 		{
 			$stmt = $conn->prepare("UPDATE users SET UploadedImage='$target_file' WHERE Email='$email'");
