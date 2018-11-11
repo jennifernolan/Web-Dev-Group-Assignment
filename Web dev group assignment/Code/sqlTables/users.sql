@@ -1,0 +1,15 @@
+CREATE TABLE users
+(
+	FirstName VARCHAR(20) NOT NULL PRIMARY KEY,
+	LastName VARCHAR(25) NOT NULL PRIMARY KEY,
+	Email VARCHAR(30) NOT NULL UNIQUE,
+	DOB DATE NOT NULL,
+	Gender VARCHAR(6) NOT NULL,
+	Address1 VARCHAR(50) NOT NULL,
+	Address2 VARCHAR(50) NOT NULL,
+	City VARCHAR(6) NOT NULL,
+	ZipCode VARCHAR(8) NOT NULL,
+	--length 60 for when the password is hashed
+	Password VARCHAR(60) NOT NULL,
+	UploadedImage VARCHAR(30) NOT NULL
+);
