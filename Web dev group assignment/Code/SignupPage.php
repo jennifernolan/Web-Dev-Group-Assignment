@@ -24,7 +24,7 @@
 			<nav>
 				<ul>
 					<li><a href="HomePage.html">Home</a></li>
-					<li><a href="SearchPage.html">Search</a></li>
+					<li><a href="SearchPage.php">Search</a></li>
 					<li><a href="LoginPage.php">Log in</a></li>
 					<li><a href="SignupPage.php">Become a member</a></li>
 					<li><a href="ProfilePage.php">Your profile</a></li>

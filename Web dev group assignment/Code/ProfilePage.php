@@ -1,4 +1,4 @@
-<!--Once user has logged in they go to this page. Add a "My Books" area where the user can add books to a wishlist to read
+<!-- Once user has logged in they go to this page. Add a "My Books" area where the user can add books to a wishlist to read-->
 <!-- If the user hasn't logged in redirect them from the profile to the login page instead -->
 <?php
 	session_start();
@@ -29,7 +29,7 @@
 			<nav>
 				<ul>
 					<li><a href="HomePage.html">Home</a></li>
-					<li><a href="SearchPage.html">Search</a></li>
+					<li><a href="SearchPage.php">Search</a></li>
 					<li><a href="LoginPage.php">Log in</a></li>
 					<li><a href="SignupPage.php">Become a member</a></li>
 					<li><a href="ProfilePage.php">Your profile</a></li>
@@ -81,6 +81,7 @@
 					<!-- A list of books the user has saved to their personal profile -->
 					<br>
 					<h2>My Books</h2>
+					
 					<br>
 					
 					<!-- Button to let the user to sign out using signout.php -->
