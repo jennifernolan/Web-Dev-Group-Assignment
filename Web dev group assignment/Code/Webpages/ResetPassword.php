@@ -7,18 +7,18 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
 	</head>
 	
 	<body>
 		<div id="main">
 			<header>
-				<img src="Images/library.jpg" alt="library"/>
+				<img src="../Images/library.jpg" alt="library"/>
 			</header>
 			
 			<nav>
 				<ul>
-					<li><a href="HomePage.html">Home</a></li>
+					<li><a href="../index.php">Home</a></li>
 					<li><a href="SearchPage.php">Search</a></li>
 					<li><a href="LoginPage.php">Log in</a></li>
 					<li><a href="SignupPage.php">Become a member</a></li>
@@ -32,7 +32,7 @@
 					<br>
 					
 					<!-- form for the user to submit their new password and update their details in the database -->
-					<form action="Scripts/resetPassword.php" method="post" name="personal_info" id="personal_info">
+					<form action="../Scripts/resetPassword.php" method="post" name="personal_info" id="personal_info">
 						<table align="center" border="0"><tbody>
 							<tr>
 								<td class="name">

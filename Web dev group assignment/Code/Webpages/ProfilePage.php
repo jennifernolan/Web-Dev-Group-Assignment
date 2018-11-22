@@ -14,21 +14,21 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
 		
 		<title>The Library</title>
 	</head>
 	
 	<body>
-		<script src="Scripts/site.js"></script>
+		<script src="../Scripts/site.js"></script>
 		<div id="main">
 			<header>
-				<img src="Images/library.jpg" alt="library"/>
+				<img src="../Images/library.jpg" alt="library"/>
 			</header>
 			
 			<nav>
 				<ul>
-					<li><a href="HomePage.html">Home</a></li>
+					<li><a href="../index.php">Home</a></li>
 					<li><a href="SearchPage.php">Search</a></li>
 					<li><a href="LoginPage.php">Log in</a></li>
 					<li><a href="SignupPage.php">Become a member</a></li>
@@ -42,7 +42,7 @@
 					
 					<!--connect to the database to get the image file path of a previously uploaded picture -->
 					<?php 
-						require 'DbConnection/connection.php';
+						require '../DbConnection/connection.php';
 						$query = "SELECT UploadedImage FROM Users";
 						$statement = $conn->query($query);
 						$result = $statement->fetchAll(PDO::FETCH_COLUMN);
@@ -68,7 +68,7 @@
 					<br>
 					
 					<!-- if the user wants to upload an image use the below form to lead to upload.php to upload the selected picture -->
-					<form action="upload.php" method="post" enctype="multipart/form-data">
+					<form action="../Scripts/upload.php" method="post" enctype="multipart/form-data">
 						Select an image to upload:
 						<br>
 						<br>
@@ -82,10 +82,11 @@
 					<br>
 					<h2>My Books</h2>
 					
+					
 					<br>
 					
 					<!-- Button to let the user to sign out using signout.php -->
-					<form action="Scripts/signout.php">
+					<form action="../Scripts/signout.php">
 						<input type="submit" value="Sign Out">
 					</form>
 					
@@ -99,7 +100,7 @@
 					<br>
 					
 					<!-- Button to delete the users information from the database and their profile using deleteProfile.php -->
-					<form action="Scripts/deleteProfile.php">
+					<form action="../Scripts/deleteProfile.php">
 						<input type="submit" value="Delete your profile">
 					</form>
 					

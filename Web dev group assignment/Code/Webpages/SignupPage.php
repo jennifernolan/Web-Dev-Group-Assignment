@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"><!--used to format the datepicker-->
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -15,15 +15,15 @@
 	</head>
 	
 	<body>
-		<script src="Scripts/site.js"></script>
+		<script src="../Scripts/site.js"></script>
 		<div id="main">
 			<header>
-				<img src="Images/library.jpg" alt="library"/>
+				<img src="../Images/library.jpg" alt="library"/>
 			</header>
 			
 			<nav>
 				<ul>
-					<li><a href="HomePage.html">Home</a></li>
+					<li><a href="../index.php">Home</a></li>
 					<li><a href="SearchPage.php">Search</a></li>
 					<li><a href="LoginPage.php">Log in</a></li>
 					<li><a href="SignupPage.php">Become a member</a></li>
@@ -37,9 +37,9 @@
 					<p>Please fill out the below form to register at the library:</p>
 					<br>
 					<!-- connect to the database -->
-					<?php require 'DbConnection/connection.php';?>
+					<?php require '../DbConnection/connection.php';?>
 					<!-- When the user enters their details into the form go to signup.php and add their details to the system. Javascript used to validate user details -->
-					<form action="Scripts/signup.php" method="post" name="personal_info" id="personal_info">
+					<form action="../Scripts/signup.php" method="post" name="personal_info" id="personal_info">
 						<table align="center" border="0"><tbody>
 							<tr>
 								<td class="name">

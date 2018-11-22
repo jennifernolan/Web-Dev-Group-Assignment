@@ -10,5 +10,5 @@
 	$stmt = $conn->prepare("UPDATE Users SET Password = '$password' WHERE Email = '$email'");
 	$stmt->execute();
 
-	header('location:../ProfilePage.php');
+	header('location:../Webpages/ProfilePage.php');
 ?>

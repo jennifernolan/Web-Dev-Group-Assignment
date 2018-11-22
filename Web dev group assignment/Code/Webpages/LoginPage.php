@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
 		
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"><!--used to format the datepicker-->
 		
@@ -16,15 +16,15 @@
 	</head>
 	
 	<body>
-		<script src="Scripts/site.js"></script>
+		<script src="../Scripts/site.js"></script>
 		<div id="main">
 			<header>
-				<img src="Images/library.jpg" alt="library"/>
+				<img src="../Images/library.jpg" alt="library"/>
 			</header>
 			
 			<nav>
 				<ul>
-					<li><a href="HomePage.html">Home</a></li>
+					<li><a href="../index.php">Home</a></li>
 					<li><a href="SearchPage.php">Search</a></li>
 					<li><a href="LoginPage.php">Log in</a></li>
 					<li><a href="SignupPage.php">Become a member</a></li>
@@ -37,10 +37,10 @@
 					<h1>PLEASE LOGIN</h1>
 					<br>
 					<!-- Connect to the database -->
-					<?php require 'DbConnection/connection.php';?>
+					<?php require '../DbConnection/connection.php';?>
 					<!-- When the form is submitted go to login.php to log the user in -->
 					<!-- Form validation done with javascript -->
-					<form action="Scripts/login.php" method="post" name="personal_info" id="personal_info">
+					<form action="../Scripts/login.php" method="post" name="personal_info" id="personal_info">
 						<table align="center" border="0"><tbody>
 							<tr>
 								<td class="name">

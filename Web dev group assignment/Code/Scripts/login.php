@@ -47,7 +47,7 @@
 				if($resultsArray1[$count] == $firstname && $resultsArray2[$count] == $lastname && $resultsArray3[$count] == $email && $pass == true)
 				{
 					$successful = 1;
-					header('location:../ProfilePage.php');
+					header('location:../Webpages/ProfilePage.php');
 					//echo "Login successful";
 				}
 			}
@@ -55,7 +55,7 @@
 			//if they are not a valid user redirect them back to the login page
 			if($successful == 0)
 			{
-				header('location:../LoginPage.php');
+				header('location:../Webpages/LoginPage.php');
 				//echo "Login unsuccessful";
 			}
 		}

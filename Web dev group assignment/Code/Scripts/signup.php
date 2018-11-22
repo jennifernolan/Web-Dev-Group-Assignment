@@ -53,12 +53,12 @@
 			if($stmt->execute())
 			{
 				//echo "New records created successfully";
-				header('location:../ProfilePage.php');
+				header('location:../Webpages/ProfilePage.php');
 			}
 		}
 		else
 		{
-			header('location:../SignupPage.php');
+			header('location:../Webpages/SignupPage.php');
 		}
 	}
 ?>
