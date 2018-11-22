@@ -8,8 +8,7 @@
 	$stmt = $conn->prepare("DELETE FROM Users WHERE Email = '$email'");
 	$stmt->execute();
 	
-	$stmt2 = $conn->prepare("DELETE FROM favorites WHERE Email = '$email'");
-	$stmt2->execute();
+	
 	
 	//destroy all the session info and go back to the signup page
 	session_unset();
