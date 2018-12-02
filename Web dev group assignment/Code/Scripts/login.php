@@ -48,7 +48,6 @@
 				{
 					$successful = 1;
 					header('location:../Webpages/ProfilePage.php');
-					//echo "Login successful";
 				}
 			}
 			
@@ -56,7 +55,6 @@
 			if($successful == 0)
 			{
 				header('location:../Webpages/LoginPage.php');
-				//echo "Login unsuccessful";
 			}
 		}
 		catch(PDOException $e)

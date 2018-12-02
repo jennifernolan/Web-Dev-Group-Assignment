@@ -9,7 +9,7 @@ $(function() {
 	});
 });
 	
-//form validation for the signup page form
+//form validation for the signup page form. Alert the user to any invalid entries
 $(document).ready(function() {
 	$('#submit').click(function(e) {
 		var error = 0;
@@ -84,7 +84,7 @@ $(document).ready(function() {
 	});
 });
 
-//form validation for the login page form
+//form validation for the login page form. Alert the user to any invalid entries
 $(document).ready(function() {
 	$('#login').click(function(e) {
 		var error = 0;

@@ -10,6 +10,7 @@
 	
 	if(isset($_POST['submit']))
 	{
+		//double check for a valid sign up information
 		$error = 0;
 		if (!preg_match("/^[a-zA-Z ]*$/",$_POST['firstname_text'])) {
 		    $error = 1;	  
@@ -32,33 +33,58 @@
 		if (!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/",$_POST['password_text'])) {
 		    $error = 1;	  
 		}
-		//if the form is submitted and valid input is given insert the users details into a new row in the database
-		$stmt = $conn->prepare("INSERT INTO Users(FirstName, LastName, Email, DOB, Gender, Address1, Address2, City, ZipCode, Password) values (:firstname, :lastname, :email,:dob,:gender,:address1,:address2,:city,:zipcode,:password)");
-	
-		//use bindParam to avoid an SQL injection attack
-		$stmt->bindParam(':firstname',$_POST['firstname_text']);
-		$stmt->bindParam(':lastname',$_POST['lastname_text']);
-		$stmt->bindParam(':email',$_POST['email_text']);
-		$stmt->bindParam(':dob', $_POST['date_picker']);
-		$stmt->bindParam(':gender',$_POST['select_gender']);
-		$stmt->bindParam(':address1',$_POST['addr1_text']);
-		$stmt->bindParam(':address2',$_POST['addr2_text']);
-		$stmt->bindParam(':city',$_POST['city_text']);
-		$stmt->bindParam(':zipcode',$_POST['zip_text']);
-		$stmt->bindParam(':password',password_hash($_POST['password_text'], PASSWORD_DEFAULT));
 		
-		//if the statement executes correctly it will bring the user to their profile page
-		if($error == 0)
+		//check that the users email hasn't already been used as a signup email
+		$query = $conn->query("SELECT Email FROM users");
+		$query->execute();
+		$result = $query->fetchAll(PDO::FETCH_COLUMN);
+		$row = $query->rowCount();
+		$here = 0;
+		
+		for($count = 0; $count <= $row; $count++)
 		{
-			if($stmt->execute())
+			if($result[$count] == $_POST['email_text'])
 			{
-				//echo "New records created successfully";
-				header('location:../Webpages/ProfilePage.php');
+				$here = 1;
 			}
+		}
+
+		//if email has been used before alert the user and go back to sign up page
+		if($here == 1)
+		{
+			echo "<script type='text/javascript'>alert('User information already used.');</script>";
+			echo "<script>window.location.href = '../Webpages/SignupPage.php';</script>";
 		}
 		else
 		{
-			header('location:../Webpages/SignupPage.php');
+			//if the form is submitted and valid input is given insert the users details into a new row in the database
+			$stmt = $conn->prepare("INSERT INTO Users(FirstName, LastName, Email, DOB, Gender, Address1, Address2, City, ZipCode, Password) values (:firstname, :lastname, :email,:dob,:gender,:address1,:address2,:city,:zipcode,:password)");
+			
+			//use bindParam to avoid an SQL injection attack
+			$stmt->bindParam(':firstname',$_POST['firstname_text']);
+			$stmt->bindParam(':lastname',$_POST['lastname_text']);
+			$stmt->bindParam(':email',$_POST['email_text']);
+			$stmt->bindParam(':dob', $_POST['date_picker']);
+			$stmt->bindParam(':gender',$_POST['select_gender']);
+			$stmt->bindParam(':address1',$_POST['addr1_text']);
+			$stmt->bindParam(':address2',$_POST['addr2_text']);
+			$stmt->bindParam(':city',$_POST['city_text']);
+			$stmt->bindParam(':zipcode',$_POST['zip_text']);
+			$stmt->bindParam(':password',password_hash($_POST['password_text'], PASSWORD_DEFAULT));
+				
+			//if the statement executes correctly it will bring the user to their profile page
+			if($error == 0)
+			{
+				if($stmt->execute())
+				{
+					header('location:../Webpages/ProfilePage.php');
+				}
+				else
+				{
+					//if the user is unsuccessful they will be redirected to the signuppage to try again
+					header('location:../Webpages/SignupPage.php');
+				}
+			}
 		}
 	}
 ?>

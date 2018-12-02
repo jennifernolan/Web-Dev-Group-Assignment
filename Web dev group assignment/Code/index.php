@@ -48,7 +48,7 @@
 					
 					<br>
 					
-					<!-- Carousel images using bootstrap -->
+					<!-- Carousel images using bootstrap. Carousel structure adapted from w3schools -->
 					<div class="container">
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 						

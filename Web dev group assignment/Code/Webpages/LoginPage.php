@@ -39,7 +39,7 @@
 					<!-- Connect to the database -->
 					<?php require '../DbConnection/connection.php';?>
 					<!-- When the form is submitted go to login.php to log the user in -->
-					<!-- Form validation done with javascript -->
+					<!-- Form validation done with jQuery -->
 					<form action="../Scripts/login.php" method="post" name="personal_info" id="personal_info">
 						<table align="center" border="0"><tbody>
 							<tr>
