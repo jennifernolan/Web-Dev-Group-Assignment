@@ -139,7 +139,7 @@
 			</div>
 			
 			<footer>
-				Site by: Jennifer Nolan &copy; 2018
+				&copy; 2018
 			</footer>
 		</div>
 	</body>

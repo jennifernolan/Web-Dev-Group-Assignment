@@ -40,7 +40,7 @@
 				<section class="contentSection">
 					<h1>WELCOME TO YOUR PROFILE</h1>
 					
-					<!--connect to the database to get the image file path of a previously uploaded picture -->
+					<!--connect to the database to get the image file path of a previously uploaded picture if one is there -->
 					<?php 
 						require '../DbConnection/connection.php';
 						$query = "SELECT UploadedImage FROM Users";
@@ -68,7 +68,7 @@
 					<br>
 					
 					<!-- if the user wants to upload an image use the below form to lead to upload.php to upload the selected picture -->
-					<form action="../Scripts/upload.php" method="post" enctype="multipart/form-data">
+					<form action="../Scripts/upload.php" method="post" enctype="multipart/form-data" style="margin-left:10px;">
 						Select an image to upload:
 						<br>
 						<br>
@@ -80,36 +80,49 @@
 					
 					<!-- A list of books the user has saved to their personal profile -->
 					<br>
-					<h2>My Books</h2>
+					<h2 style="margin-left:10px;">My Books</h2>
 					
 					
 					<br>
-					
-					<!-- Button to let the user to sign out using signout.php -->
-					<form action="../Scripts/signout.php">
-						<input type="submit" value="Sign Out">
-					</form>
-					
-					<br>
-					
-					<!-- Button to let the user reset their password using ResetPassword.php -->
-					<form action="ResetPassword.php">
-						<input type="submit" value="Reset your password">
-					</form>
-					
-					<br>
-					
-					<!-- Button to delete the users information from the database and their profile using deleteProfile.php -->
-					<form action="../Scripts/deleteProfile.php">
-						<input type="submit" value="Delete your profile">
-					</form>
-					
-					<br>
-					
+					<!-- formatting for the buttons -->
+					<table align="center">
+						<tr>
+							<td>
+								<!-- Button to let the user to sign out using signout.php -->
+								<form action="../Scripts/signout.php">
+									<input type="submit" value="Sign Out">
+								</form>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+								<!-- Button to let the user reset their password using ResetPassword.php -->
+								<form action="ResetPassword.php">
+									<input type="submit" value="Reset your password">
+								</form>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+								<!-- Button to delete the users information from the database and their profile using deleteProfile.php -->
+								<form action="../Scripts/deleteProfile.php">
+									<input type="submit" value="Delete your profile">
+								</form>
+							</td>
+						</tr>
+					</table>
 				</section>
 			</div>
 			<footer>
-				Site by: Jennifer Nolan &copy; 2018
+				&copy; 2018
 			</footer>
 		</div>
 	</body>
